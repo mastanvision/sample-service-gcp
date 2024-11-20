@@ -36,10 +36,11 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Google Auth
-      uses: google-github-actions/auth@v2
-      with:
-        credentials_json: '${{ secrets.NON_PROD_GCP_SA }}'
+      
+    # - name: Google Auth
+    #   uses: google-github-actions/auth@v2
+    #   with:
+    #     credentials_json: '${{ secrets.NON_PROD_GCP_SA }}'
 
     - name: Ensure IMAGE_TAG is Properly Set
       run: |
